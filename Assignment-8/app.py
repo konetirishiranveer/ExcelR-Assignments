@@ -1,9 +1,12 @@
+import os
 import streamlit as st
 import pickle
 import numpy as np
 
 # Load trained diabetes model
-with open("diabetes_model.pkl", "rb") as file:
+model_path = os.path.join(os.path.dirname(__file__), "diabetes_model.pkl")
+
+with open(model_path, "rb") as file:
     model = pickle.load(file)
 
 st.set_page_config(
